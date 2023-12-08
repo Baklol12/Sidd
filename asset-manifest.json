@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Sidd/static/css/main.f8d87a08.css",
+    "main.js": "/Sidd/static/js/main.fac96f2e.js",
+    "static/js/787.d4aba7ab.chunk.js": "/Sidd/static/js/787.d4aba7ab.chunk.js",
+    "index.html": "/Sidd/index.html",
+    "main.f8d87a08.css.map": "/Sidd/static/css/main.f8d87a08.css.map",
+    "main.fac96f2e.js.map": "/Sidd/static/js/main.fac96f2e.js.map",
+    "787.d4aba7ab.chunk.js.map": "/Sidd/static/js/787.d4aba7ab.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f8d87a08.css",
+    "static/js/main.fac96f2e.js"
+  ]
+}
