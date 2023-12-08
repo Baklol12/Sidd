@@ -1,0 +1,101 @@
+:root {
+	font-size: 2rem;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	color: #eee;
+	background-color: #111;
+}
+
+.center {
+	display: grid;
+	place-content: center;
+	position: absolute;
+	inset: 0;
+}
+
+.iso {
+	--iso: scaleX(0.866025) rotateZ(30deg) skewX(150deg);
+
+	max-width: 45ch;
+	transform: var(--iso);
+}
+
+.btn1 {
+	--size: 1em;
+	--magic: 0.866025;
+	--shift: translate(
+		calc(-1 * var(--size)),
+		calc(-1 * var(--size) * var(--magic))
+	);
+	position: relative;
+	font: inherit;
+	color: #eee;
+	background-color: #222;
+	border: none;
+	padding: 0;
+
+	transform: var(--shift);
+	transition: transform 400ms ease;
+}
+
+.content {
+	background-color: #222;
+	padding: 1em;
+}
+
+:is(.side, .front) {
+	position: absolute;
+	transition: transform 400ms ease;
+}
+
+.front {
+	inset: 0 calc(var(--size) * -2) 0 100%;
+	background-color: #262626;
+
+	transform-origin: center left;
+	transform: skewY(41.25deg) scaleX(0.5);
+	z-index: 1;
+}
+
+.side {
+	inset: 100% 0 calc(-2 * var(--size) * var(--magic)) 0;
+	background-color: #161616;
+
+	transform-origin: top center;
+	transform: skewX(49deg) scaleY(0.5);
+	z-index: 1;
+}
+
+.btn1:hover {
+	--shift: translate(
+		calc(-2 * var(--size)),
+		calc(-2 * var(--size) * var(--magic))
+	);
+}
+
+.btn1:active {
+	--shift: translate(0, 0);
+}
+
+.btn1:hover .front {
+	transform: skewY(41.25deg) scaleX(1);
+}
+
+.btn1:hover .side {
+	transform: skewX(49deg) scaleY(1);
+}
+
+.btn1:active .front {
+	transform: skewY(41.25deg) scaleX(0);
+}
+
+.btn1:active .side {
+	transform: skewX(49deg) scaleY(0);
+}
